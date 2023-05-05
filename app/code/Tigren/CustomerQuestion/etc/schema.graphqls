@@ -1,0 +1,29 @@
+type Query {
+    getQuestionData(offset: Int,limit: Int): [QuestionData] @resolver(class: "\\Tigren\\CustomerQuestion\\Model\\Resolver\\QuestionDataResolver") @doc(description: "List of questions")
+    getQuestion(question_id: Int): [QuestionData] @resolver(class: "\\Tigren\\CustomerQuestion\\Model\\Resolver\\QuestionResolver") @doc(description: "Question by id")
+}
+
+type QuestionData {
+    question_id: Int @doc(description: "Question Id")
+    customer_name: String @doc(description: "Customer Name")
+    title: String @doc(description: "Title")
+    content: String @doc(description: "Content")
+}
+
+type Mutation {
+    createQuestion(input: QuestionInput!): QuestionOutput @resolver (
+        class: "\\Tigren\\CustomerQuestion\\Model\\Resolver\\CreateQuestion") @doc(
+        description: "Insert new question")
+}
+
+input QuestionInput {
+    question_id: Int @doc(description: "Question Id")
+    customer_name: String @doc(description: "Customer Name")
+    title: String @doc(description: "Title")
+    content: String @doc(description: "Content")
+}
+
+
+type QuestionOutput {
+    message: String @doc(description: "status message")
+}

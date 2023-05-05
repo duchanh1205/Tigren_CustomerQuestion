@@ -1,0 +1,14 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <!-- @author    Tigren Solutions <info@tigren.com>-->
+    <!-- @copyright Copyright (c) 2023 Tigren Solutions <https://www.tigren.com>. All rights reserved.-->
+    <!-- @license   Open Software License ("OSL") v. 3.0-->
+    <body>
+        <!--Create a new page layout (code challenge 1 - part 03)-->
+        <referenceContainer name="product.info.container2">
+            <container name="custom.block.container" htmlTag="div" htmlClass="custom-block-container">
+                <!--Add a new block (code challenge 1 - part 03)-->
+                <block class="Magento\Catalog\Block\Product\View" name="custom.block" template="Magento_Catalog::product/custom-block.phtml" />
+            </container>
+        </referenceContainer>
+    </body>
+</page>
